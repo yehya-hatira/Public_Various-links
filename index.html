@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>情人节快乐 ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #8A2BE2; /* 紫色背景 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: "Helvetica Neue", sans-serif;
+    }
+
+    .heart {
+      position: relative;
+      width: 120px;
+      height: 100px;
+      transform-style: preserve-3d;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 160px;
+      background: #ff4757;
+      border-radius: 50px 50px 0 0;
+      transform-origin: bottom center;
+    }
+
+    .heart::before {
+      left: 50px;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.7);
+    }
+
+    .heart::after {
+      left: -10px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 20px rgba(255, 71, 87, 0.7);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotateY(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotateY(10deg);
+      }
+    }
+
+    /* 增强3D效果 */
+    .heart {
+      perspective: 1000px;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+</body>
+</html>
